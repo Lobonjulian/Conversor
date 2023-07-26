@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2844ce5-b8ac-4cd7-8fb2-774d19365b25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Conversor.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConversordeMoneda.java" afterDir="false" />
+    <list default="true" id="f2844ce5-b8ac-4cd7-8fb2-774d19365b25" name="Changes" comment="Cambiao de nombre de la rama master a main y creacion de 2 conversores mas">
+      <change afterPath="$PROJECT_DIR$/src/convertidores/Inicio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/convertidores/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/convertidores/SistemaDeConversion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfazGraficaUsuario/ConversorMonedaInterfaz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfazGraficaUsuario/ConversorTemperaturaInterfaz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfazGraficaUsuario/ConversorTiempoInterfaz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfazGraficaUsuario/InicioInterfaz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConversordeMoneda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/convertidores/ConversordeMoneda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConversordeTemperatura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/convertidores/ConversordeTemperatura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConversordeTiempo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/convertidores/ConversorTiempo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +30,37 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="InterfazGrafica" />
+                    <option name="lastUsedInstant" value="1690402142" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1690394791" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="ProjectId" id="2T7JLdoWDuiaf75A5tCWLhkjJQk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -40,10 +74,28 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "InterfazGrafica"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="convertidores" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="convertidores.Main" />
+      <module name="Conversor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="convertidores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Moneda" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Moneda" />
       <module name="Conversor" />
@@ -51,6 +103,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,6 +118,28 @@
       <option name="presentableId" value="Default" />
       <updated>1690388131745</updated>
     </task>
+    <task id="LOCAL-00001" summary="creando un conversor en Java">
+      <option name="closed" value="true" />
+      <created>1690392304711</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690392304711</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Cambiao de nombre de la rama master a main y creacion de 2 conversores mas">
+      <option name="closed" value="true" />
+      <created>1690394903648</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690394903648</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="creando un conversor en Java" />
+    <MESSAGE value="Cambiao de nombre de la rama master a main y creacion de 2 conversores mas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiao de nombre de la rama master a main y creacion de 2 conversores mas" />
   </component>
 </project>

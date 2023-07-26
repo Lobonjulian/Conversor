@@ -1,11 +1,14 @@
+package convertidores;
+
 import java.text.DecimalFormat;
 
-public class ConversordeTiempo {
+public class ConversorTiempo {
 
     //
-    public ConversordeTiempo() {
+    public ConversorTiempo() {
     }
-    // se proporcionan métodos para convertir entre diferentes escalas de tiempo.
+    // se proporcionan métodos para convertir entre diferentes escalas de tiempo
+    // iniciando por segundo y terminando en años.
     public String ConvertirSegundo(double segundos, String conversor){
         double resultado = segundos;
         DecimalFormat format = new DecimalFormat("#,##0.000");
@@ -33,6 +36,34 @@ public class ConversordeTiempo {
                 break;
         }
         return format.format(resultado);
+    }
+    public String ConvertirMinuto(double minutos, String conversor) {
+        double resultado = minutos;
+        DecimalFormat formato = new DecimalFormat("#,##0.000");
+        switch (conversor) {
+            case "Segundos":
+                resultado = minutos * 60;
+                break;
+            case "Minutos":
+                resultado = minutos;
+                break;
+            case "Horas":
+                resultado = minutos / 60;
+                break;
+            case "Días":
+                resultado = minutos / 1440;
+                break;
+            case "Semanas":
+                resultado = minutos / 10080;
+                break;
+            case "Meses":
+                resultado = minutos / 43800;
+                break;
+            case "Años":
+                resultado = minutos / 525600;
+                break;
+        }
+        return"" + formato.format(resultado);
     }
     public String ConvertirHora(double hora, String conversor){
         double resultado = hora;
@@ -182,8 +213,4 @@ public class ConversordeTiempo {
 
     }
 
-
-
-
 }
-

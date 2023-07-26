@@ -1,3 +1,5 @@
+package convertidores;
+
 public class ConversordeTemperatura {
 
     //constructor

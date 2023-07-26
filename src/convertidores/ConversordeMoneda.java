@@ -1,3 +1,6 @@
+package convertidores;
+
+import interfazGraficaUsuario.ConversorMonedaInterfaz;
 
 public class ConversordeMoneda {
 
@@ -41,6 +44,20 @@ public class ConversordeMoneda {
           public String getSimbolo() {
               return simbolo;
           }
+    }
+
+    //Inicializa las operaciones de conversión y presenta la ventana del conversor.
+    private SistemaDeConversion sistemaDeConversion ;
+
+    public ConversordeMoneda() {
+        sistemaDeConversion = new SistemaDeConversion();
+        AbrirVentana();
+    }
+
+    public void AbrirVentana() {
+        ConversorMonedaInterfaz interfaz = new ConversorMonedaInterfaz();
+        interfaz.asignarConversion(sistemaDeConversion);
+        interfaz.setVisible(true);
     }
 }
 
