@@ -26,12 +26,13 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
     }
 
     private void iniciarComponente() {
-        setBounds(100,100,400,410);
+        setBounds(300,200,570,500);
         contentPane = new JPanel();
-        contentPane.setBackground(new Color(255, 255, 240));
+        contentPane.setBackground(new Color(255, 199, 95));
         contentPane.setBorder(new EmptyBorder(5,5,5,5));
+
         setContentPane(contentPane);
-        //
+        IngresarImagen[] imgIngresarImagen = new IngresarImagen[2];
 
         comboBoxTemp1 = new JComboBox<>();
         comboBoxTemp1.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -39,25 +40,23 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
                 "Celsius a Fahrenheit", "Celsius a Kelvin", "Fahrenheit a Celsius",
                 "Kelvin a Celsius", "Kelvin a Fahrenheit"
         }));
-        comboBoxTemp1.setBounds(30,150,140,30);
+
+        comboBoxTemp1.setBounds(50,150,140,30);
         contentPane.add(comboBoxTemp1);
         comboBoxTemp1.addItemListener(this);
 
         comboBoxTemp2 = new JComboBox<>();
         comboBoxTemp2.setFont(new Font("Tahoma",Font.BOLD, 15));
         comboBoxTemp2.setModel(new DefaultComboBoxModel<>(new String[]{"Fahrenheit", "Kelvin", "Celsius"}));
-        comboBoxTemp2.setBounds(100,190,170,30);
+        comboBoxTemp2.setBounds(50,200,140,30);
         contentPane.add(comboBoxTemp2);
         comboBoxTemp2.addItemListener(this);
 
         //Botones
         btnConvertir = new JButton();
         btnConvertir.setBorderPainted(false);
-        btnConvertir.setBounds(159, 236, 49, 49);
-        btnConvertir.setBackground(new Color(240, 255, 240));
-        //imgAjustada[0] = new AjustarImagen();
-        //imgAjustada[0].AjustaImagen(btnConvertir, "/imagenes/flecha-de-bucle.png");
-
+        btnConvertir.setBounds(150, 236, 49, 49);
+        //btnConvertir.setBackground(new Color(240, 255, 240));
         btnConvertir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnConvertir.addActionListener(this);
         getContentPane().add(btnConvertir);
@@ -67,13 +66,13 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
         btnRegresar.setFocusPainted(false);
         btnRegresar.setBorderPainted(false);
         btnRegresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnRegresar.setBounds(0, 0, 49, 49);
+        btnRegresar.setBounds(20, 350, 50, 50);
         btnRegresar.setOpaque(true);
         btnRegresar.setBorder(null);
-        btnRegresar.setBackground(new Color(240, 255, 240));
-        //imgAjustada[1] = new AjustarImagen();
-        //imgAjustada[1].AjustaImagen(btnRegresar, "/imagenes/atras.png");
+        //btnRegresar.setBackground(new Color(240, 255, 240));
         btnRegresar.addActionListener(this);
+        imgIngresarImagen[1] = new IngresarImagen();
+        imgIngresarImagen[1].crearImagen(btnRegresar, "/imagenes/btnAtras.png");
         getContentPane().add(btnRegresar);
 
         //Label

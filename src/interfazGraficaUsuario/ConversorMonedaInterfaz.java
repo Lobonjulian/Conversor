@@ -9,13 +9,14 @@ import java.awt.event.*;
 
 public class ConversorMonedaInterfaz extends JFrame implements ItemListener, KeyListener, ActionListener {
 
-    private JPanel contentpane;
+    private JPanel contentPane;
     private JComboBox<String> comboBoxMoneda;
     private JTextField txtValorConvertido;
     private JButton btnConvertir,btnRegresar;
     private JLabel lblResultado;
     private SistemaDeConversion conversion;
 
+    //  Conversion de la moneda
     public void asignarConversion(SistemaDeConversion conversion){
         this.conversion = conversion;
     }
@@ -30,24 +31,19 @@ public class ConversorMonedaInterfaz extends JFrame implements ItemListener, Key
 
     // componentes de la interfaz gráfica.
     private void iniciarComponente() {
-        setBounds(100, 100, 450, 300);
-        contentpane = new JPanel();
-        contentpane.setBackground(new Color(255, 255, 254));
-        contentpane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setBounds(300, 200, 570, 500);
+        contentPane = new JPanel();
+        contentPane.setBackground(new Color(255,199,95));
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-        setContentPane(contentpane);
-        //
-
-        JLabel labelTitle = new JLabel("Conversor de Moneda");
-        labelTitle.setBounds(30,45,440,100);
-        labelTitle.setFont(new Font("Tahoma", Font.BOLD, 20));
-        labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        setContentPane(contentPane);
+        IngresarImagen[] imgIngresarImagen = new IngresarImagen[2];
 
         comboBoxMoneda = new JComboBox<String>();
         comboBoxMoneda.setFont(new Font("Tahoma", Font.BOLD, 15));
-        comboBoxMoneda.setBounds(30,150,440,100);
+        comboBoxMoneda.setBounds(220,200,200,25);
         comboBoxMoneda.setModel(new DefaultComboBoxModel<String>(new String[]{
-                "Pesos a Dolares", "Pesos a Euros", "Pesos a Libras", "Pesos a Yen", "Pesos a Won", "Pesos a Won-Coreano",
+                "Pesos a Dolares", "Pesos a Euros", "Pesos a Libras", "Pesos a Yen", "Pesos a Won-Coreano",
                 "Dolares a Pesos", "Euros a Pesos", "Libras  a Pesos", "Yen Japones a Pesos", "Won Sul-Coreano a Pesos"
         }));
 
@@ -56,7 +52,7 @@ public class ConversorMonedaInterfaz extends JFrame implements ItemListener, Key
 
         txtValorConvertido = new JTextField();
         txtValorConvertido.setFont(new Font("Tahoma", Font.BOLD, 15));
-        txtValorConvertido.setBounds(30,170,140,30);
+        txtValorConvertido.setBounds(30,200,180,25);
         txtValorConvertido.setHorizontalAlignment(SwingConstants.CENTER);
         txtValorConvertido.addKeyListener(this);
         txtValorConvertido.setColumns(10);
@@ -64,39 +60,49 @@ public class ConversorMonedaInterfaz extends JFrame implements ItemListener, Key
         //botones
         btnConvertir = new JButton("Convertir");
         btnConvertir.setBorderPainted(false);
-        btnConvertir.setBounds(30,210,140,30);
-        btnConvertir.setBackground(new Color(255, 255, 254));
-        //todo:imah
+        btnConvertir.setBounds(150,250,40,30);
+        //btnConvertir.setBackground(new Color(255, 255, 255));
         btnConvertir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnConvertir.addActionListener(this);
+        imgIngresarImagen[0] = new IngresarImagen();
+        imgIngresarImagen[0].crearImagen(btnConvertir, "/imagenes/convertir.png");
 
         btnRegresar = new JButton("Regresar");
         btnRegresar.setFocusPainted(false);
         btnRegresar.setBorderPainted(false);
         btnRegresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnRegresar.setBounds(30,250,140,30);
+        btnRegresar.setBounds(20,350,50,50);
         btnRegresar.setOpaque(true);
         btnRegresar.setBorder(null);
-        btnRegresar.setBackground(new Color(255, 255, 254));
+        // btnRegresar.setBackground(new Color(255,199,95));
         btnRegresar.addActionListener(this);
-        contentpane.add(btnRegresar);
+        imgIngresarImagen[1] = new IngresarImagen();
+        imgIngresarImagen[1].crearImagen(btnRegresar, "/imagenes/btnAtras.png");
+        contentPane.add(btnRegresar);
 
         //label
+        JLabel labelTitle = new JLabel("Conversor de Moneda");
+        labelTitle.setBounds(150,50,300,30);
+        labelTitle.setFont(new Font("Tahoma", Font.BOLD, 20));
+        labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
+
         lblResultado = new JLabel("");
         lblResultado.setFont(new Font("Tahoma", Font.BOLD, 15));
         lblResultado.setBounds(30,290,440,100);
         lblResultado.setBackground(new Color(255, 255, 254));
         lblResultado.setHorizontalAlignment(SwingConstants.CENTER);
 
-        JLabel lblImportante = new JLabel("IMPORTANTE");
-        lblImportante.setBounds(80,130,80,30);
-        lblImportante.setFont(new Font("Tahoma", Font.BOLD, 15));
-        contentpane.setLayout(null);
-        contentpane.add(comboBoxMoneda);
-        contentpane.add(txtValorConvertido);
-        contentpane.add(btnConvertir);
-        contentpane.add(lblResultado);
-        contentpane.add(lblImportante);
+        JLabel lblImportante = new JLabel("Conversion");
+        lblImportante.setBounds(80,170,280,30);
+        lblImportante.setFont(new Font("Tahoma", Font.ITALIC, 15));
+
+        contentPane.setLayout(null);
+        contentPane.add(labelTitle);
+        contentPane.add(comboBoxMoneda);
+        contentPane.add(txtValorConvertido);
+        contentPane.add(btnConvertir);
+        contentPane.add(lblResultado);
+        contentPane.add(lblImportante);
     }
 
     @Override
@@ -121,7 +127,7 @@ public class ConversorMonedaInterfaz extends JFrame implements ItemListener, Key
 
     }
 
-    //implementacion de metodos de la interfaz grafica
+    //implementacion de metodos de la interfaz graficagit
     @Override
     public void itemStateChanged(ItemEvent e) {
 

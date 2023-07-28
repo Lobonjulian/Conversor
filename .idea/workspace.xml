@@ -4,23 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2844ce5-b8ac-4cd7-8fb2-774d19365b25" name="Changes" comment="Cambiao de nombre de la rama master a main y creacion de 2 conversores mas">
-      <change afterPath="$PROJECT_DIR$/src/convertidores/Inicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/convertidores/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/convertidores/SistemaDeConversion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfazGraficaUsuario/ConversorMonedaInterfaz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfazGraficaUsuario/ConversorTemperaturaInterfaz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfazGraficaUsuario/ConversorTiempoInterfaz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfazGraficaUsuario/InicioInterfaz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConversordeMoneda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/convertidores/ConversordeMoneda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConversordeTemperatura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/convertidores/ConversordeTemperatura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConversordeTiempo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/convertidores/ConversorTiempo.java" afterDir="false" />
-    </list>
+    <list default="true" id="f2844ce5-b8ac-4cd7-8fb2-774d19365b25" name="Changes" comment="se agregan images a la app y se corrige la vista de la pantalla inicial y del conversor de divisa" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="module" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,6 +32,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -45,6 +40,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="Imagenes" />
+                    <option name="lastUsedInstant" value="1690415650" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="InterfazGrafica" />
                     <option name="lastUsedInstant" value="1690402142" />
@@ -70,13 +69,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "InterfazGrafica"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Imagenes&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="convertidores" />
@@ -134,12 +134,48 @@
       <option name="project" value="LOCAL" />
       <updated>1690394903648</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="se crea las interfaz grafica de la aplicacion en una nueva rama">
+      <option name="closed" value="true" />
+      <created>1690415627046</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690415627046</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creando un conversor en Java" />
     <MESSAGE value="Cambiao de nombre de la rama master a main y creacion de 2 conversores mas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiao de nombre de la rama master a main y creacion de 2 conversores mas" />
+    <MESSAGE value="se crea las interfaz grafica de la aplicacion en una nueva rama" />
+    <option name="LAST_COMMIT_MESSAGE" value="se crea las interfaz grafica de la aplicacion en una nueva rama" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/interfazGraficaUsuario/InicioInterfaz.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/interfazGraficaUsuario/IngresarImagen.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

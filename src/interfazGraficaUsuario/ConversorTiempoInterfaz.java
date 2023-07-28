@@ -26,7 +26,8 @@ public class ConversorTiempoInterfaz extends JFrame implements ActionListener, I
         getContentPane().setLayout(null);
         setBounds(100, 100, 450, 300);
 
-        //ajustarImagen[] imgAjustada = new AjustarImagen[2];
+        IngresarImagen[] imgIngresarImagen = new IngresarImagen[2];
+
         comboBoxTemp1 = new JComboBox<String>();
         comboBoxTemp1.setFont(new Font("Tahoma", Font.BOLD, 13));
         comboBoxTemp1.setModel(new DefaultComboBoxModel<String>(new String[] {
@@ -62,9 +63,9 @@ public class ConversorTiempoInterfaz extends JFrame implements ActionListener, I
         btnRegresar.setBounds(0, 0, 49, 49);
         btnRegresar.setOpaque(true);
         btnRegresar.setBorder(null);
-        btnRegresar.setBackground(new Color(255, 248, 220));
-        //imgAjustada[1] = new AjustarImagen();
-        //imgAjustada[1].AjustaImagen(btnRegresar, "/imagenes/atras.png");
+        //btnRegresar.setBackground(new Color(255, 248, 220));
+        imgIngresarImagen[1] = new IngresarImagen();
+        imgIngresarImagen[1].crearImagen(btnRegresar, "/imagenes/btnAtras.png");
         btnRegresar.addActionListener(this);
         getContentPane().add(btnRegresar);
 
