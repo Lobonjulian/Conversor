@@ -10,14 +10,13 @@ import java.awt.event.*;
 
 public class ConversorTemperaturaInterfaz extends JFrame implements ActionListener, ItemListener, KeyListener {
 
-    private JPanel contentPane;
+    private JComboBox<String> comboBoxTemp1, comboBoxTemp2;
     private JTextField txtValorConvertido;
     private JButton btnConvertir,btnRegresar;
-    JComboBox<String> comboBoxTemp1, comboBoxTemp2;
-    private JLabel lblResultado;
-    ConversordeTemperatura conversion;
+    private JLabel lblResultado, lblTitulo, lblConexionA, lblnombre;
 
     public ConversorTemperaturaInterfaz() {
+        getContentPane().setBackground(new Color(255, 150, 100));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         iniciarComponente();
         setTitle("Conversor de Temperatura");
@@ -25,74 +24,83 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
         setLocationRelativeTo(null);
     }
 
+    // componentes de la interfaz gráfica.
     private void iniciarComponente() {
-        setBounds(300,200,570,500);
-        contentPane = new JPanel();
-        contentPane.setBackground(new Color(255, 199, 95));
-        contentPane.setBorder(new EmptyBorder(5,5,5,5));
+        getContentPane().setLayout(null);
+        setBounds(300,200,500,500);
 
-        setContentPane(contentPane);
         IngresarImagen[] imgIngresarImagen = new IngresarImagen[2];
 
-        comboBoxTemp1 = new JComboBox<>();
-        comboBoxTemp1.setFont(new Font("Tahoma", Font.BOLD, 15));
-        comboBoxTemp1.setModel(new DefaultComboBoxModel<>(new String[]{
-                "Celsius a Fahrenheit", "Celsius a Kelvin", "Fahrenheit a Celsius",
-                "Kelvin a Celsius", "Kelvin a Fahrenheit"
-        }));
-
-        comboBoxTemp1.setBounds(50,150,140,30);
-        contentPane.add(comboBoxTemp1);
+        comboBoxTemp1 = new JComboBox<String>();
+        comboBoxTemp1.setFont(new Font("Tahoma ", Font.BOLD, 15));
+        comboBoxTemp1.setBounds(150,150,200,30);
+        comboBoxTemp1.setModel(new DefaultComboBoxModel<String>(new String[]{
+                "Celsius","Fahrenheit", "Kelvin" }));
+        getContentPane().add(comboBoxTemp1);
         comboBoxTemp1.addItemListener(this);
 
-        comboBoxTemp2 = new JComboBox<>();
+        comboBoxTemp2 = new JComboBox<String>();
         comboBoxTemp2.setFont(new Font("Tahoma",Font.BOLD, 15));
         comboBoxTemp2.setModel(new DefaultComboBoxModel<>(new String[]{"Fahrenheit", "Kelvin", "Celsius"}));
-        comboBoxTemp2.setBounds(50,200,140,30);
-        contentPane.add(comboBoxTemp2);
+        comboBoxTemp2.setBounds(150,220,200,30);
+        getContentPane().add(comboBoxTemp2);
         comboBoxTemp2.addItemListener(this);
+
+        //Label
+        lblTitulo = new JLabel("Conversor de Temperatura");
+        lblTitulo.setBounds(100, 25, 300, 30);
+        lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 20));
+        lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+        getContentPane().add(lblTitulo);
+
+        lblConexionA = new JLabel("A");
+        lblConexionA.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblConexionA.setHorizontalAlignment(SwingConstants.CENTER);
+        lblConexionA.setBounds(230, 190, 30, 20);
+        getContentPane().add(lblConexionA);
+
+        lblResultado = new JLabel("");
+        lblResultado.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblResultado.setHorizontalAlignment(SwingConstants.CENTER);
+        lblResultado.setBounds(150, 330, 200, 30);
+        getContentPane().add(lblResultado);
+
+        lblnombre = new JLabel("Realizado por: Julian Lobon");
+        lblnombre.setBounds(150,415,300,30);
+        lblnombre.setFont(new Font("Tahoma", Font.ITALIC, 18));
+        getContentPane().add(lblnombre);
 
         //Botones
         btnConvertir = new JButton();
         btnConvertir.setBorderPainted(false);
-        btnConvertir.setBounds(150, 236, 49, 49);
-        //btnConvertir.setBackground(new Color(240, 255, 240));
+        btnConvertir.setBounds(230, 275, 50, 50);
+        btnConvertir.setBackground(new Color(255, 150, 100));
         btnConvertir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnConvertir.addActionListener(this);
         getContentPane().add(btnConvertir);
+        imgIngresarImagen[0] = new IngresarImagen();
+        imgIngresarImagen[0].crearImagen(btnConvertir, "/imagenes/convertir.png");
 
         btnRegresar = new JButton();
         btnRegresar.setAlignmentY(0.0f);
         btnRegresar.setFocusPainted(false);
         btnRegresar.setBorderPainted(false);
         btnRegresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnRegresar.setBounds(20, 350, 50, 50);
+        btnRegresar.setBounds(20, 390, 80, 80);
         btnRegresar.setOpaque(true);
         btnRegresar.setBorder(null);
-        //btnRegresar.setBackground(new Color(240, 255, 240));
-        btnRegresar.addActionListener(this);
+        btnRegresar.setBackground(new Color(250, 150, 100));
         imgIngresarImagen[1] = new IngresarImagen();
         imgIngresarImagen[1].crearImagen(btnRegresar, "/imagenes/btnAtras.png");
+        btnRegresar.addActionListener(this);
         getContentPane().add(btnRegresar);
 
-        //Label
-        JLabel lblA = new JLabel("a");
-        lblA.setFont(new Font("Tahoma", Font.BOLD, 14));
-        lblA.setHorizontalAlignment(SwingConstants.CENTER);
-        lblA.setBounds(162, 156, 46, 28);
-        contentPane.add(lblA);
-
-        JLabel lblTitulo = new JLabel("CONVERSOR DE TEMPERATURA");
-        lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 18));
-        lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitulo.setBounds(56, 15, 301, 34);
-        contentPane.add(lblTitulo);
-
+        //donde el usuario ingresa los valores y se produce la conversion
         txtValorConvertido = new JTextField();
         txtValorConvertido.setFont(new Font("Tahoma", Font.PLAIN, 13));
         txtValorConvertido.setHorizontalAlignment(SwingConstants.CENTER);
-        txtValorConvertido.setBounds(103, 90, 169, 28);
-        contentPane.add(txtValorConvertido);
+        txtValorConvertido.setBounds(150, 75, 200, 30);
+        getContentPane().add(txtValorConvertido);
         txtValorConvertido.setColumns(10);
         txtValorConvertido.addKeyListener(this);
     }
@@ -100,19 +108,19 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
     //implementacion de metodos
     @Override
     public void actionPerformed(ActionEvent e) {
-        conversion = new ConversordeTemperatura();
+        ConversordeTemperatura conversion = new ConversordeTemperatura();
         boolean estaVacio = txtValorConvertido.getText().isEmpty();
         String resultado = "No es una conversion valida";
 
         if (e.getSource() == btnConvertir && !estaVacio) {
             try {
                 Double valor = Double.parseDouble(txtValorConvertido.getText());
-                String temp1 = (String) comboBoxTemp1.getSelectedItem();
-                String temp2 = (String) comboBoxTemp2.getSelectedItem();
+                String temperatura1 = (String) comboBoxTemp1.getSelectedItem();
+                String temperatura2 = (String) comboBoxTemp2.getSelectedItem();
 
-                switch (temp1) {
+                switch (temperatura1) {
                     case "Celsius":
-                        switch (temp2) {
+                        switch (temperatura2) {
                             case "Fahrenheit":
                                 resultado = conversion.CelsiuAFahrenheit(valor);
                                 break;
@@ -122,7 +130,7 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
                         }
                         break;
                     case "Fahrenheit":
-                        switch (temp2) {
+                        switch (temperatura2) {
                             case "Celsius":
                                 resultado = conversion.FahrenheitACelsius(valor);
                                 break;
@@ -132,7 +140,7 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
                         }
                         break;
                     case "Kelvin":
-                        switch (temp2) {
+                        switch (temperatura2) {
                             case "Celsius":
                                 resultado = conversion.KelvinACelsius(valor);
                                 break;
@@ -144,8 +152,7 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
                 }
                 lblResultado.setText(resultado);
             } catch (NumberFormatException ex) {
-                lblResultado.setText("Parametro ingresado no es valido");
-
+                lblResultado.setText("Valor ingresado no es valido");
             }
         } else if (e.getSource() == btnConvertir && estaVacio) {
             lblResultado.setText("Ingresa un valor");
@@ -159,16 +166,15 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
 
     @Override
     public void itemStateChanged(ItemEvent e) {
-
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
         char key = e.getKeyChar();
         boolean numeros = key >= 48 && key <= 59;
-        boolean puntoYnegativo = key >= 45 && key <= 46;
+        boolean punto = key >= 45 && key <= 46;
 
-        if (!(numeros || puntoYnegativo)) {
+        if (!(numeros || punto)) {
             e.consume();
 
         }
@@ -176,11 +182,9 @@ public class ConversorTemperaturaInterfaz extends JFrame implements ActionListen
 
     @Override
     public void keyPressed(KeyEvent e) {
-
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
 }

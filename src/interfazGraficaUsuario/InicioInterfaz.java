@@ -22,12 +22,12 @@ public class InicioInterfaz extends JFrame  implements ActionListener {
         setTitle("Conversores de Moneda, Tiempo, y Temperatura");
         iniciarComponente();
         setResizable(false);
-        //setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
 
     private void iniciarComponente() {
         // tamaño de salida de la  pantalla
-        setBounds(300, 200, 570, 500);
+        setBounds(300, 200, 550, 650);
         contentPane = new JPanel();
         contentPane.setBackground(SystemColor.menu);
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -36,6 +36,31 @@ public class InicioInterfaz extends JFrame  implements ActionListener {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
+        //Texto
+        JLabel lblNewLabel = new JLabel("Elija un conversor");
+        lblNewLabel.setFont(new Font("Garamond", Font.BOLD, 25));
+        lblNewLabel.setBounds(100,30,400,30);
+        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        contentPane.add(lblNewLabel);
+
+        lblConvesorMoneda = new JLabel("Convertirdor de Divisas");
+        lblConvesorMoneda.setFont(new Font("Asix Founder Font", Font.BOLD, 15));
+        lblConvesorMoneda.setBounds(50,130,200,30);
+        lblConvesorMoneda.setHorizontalAlignment(SwingConstants.CENTER);
+        contentPane.add(lblConvesorMoneda);
+
+        lblConvesorTiempo = new JLabel("Convertir Tiempo");
+        lblConvesorTiempo.setFont(new Font("Asix Founder Font", Font.BOLD, 15));
+        lblConvesorTiempo.setBounds(50,335,200,30);
+        lblConvesorTiempo.setHorizontalAlignment(SwingConstants.CENTER);
+        contentPane.add(lblConvesorTiempo);
+
+        lblConvesorTemperatura = new JLabel("Convertir Temperatura");
+        lblConvesorTemperatura.setFont(new Font("Asix Founder Font", Font.BOLD, 15));
+        lblConvesorTemperatura.setBounds(50,505,200,30);
+        lblConvesorTemperatura.setHorizontalAlignment(SwingConstants.CENTER);
+        contentPane.add(lblConvesorTemperatura);
+
         //botones
         btnConvesorMoneda = new JButton("");
         btnConvesorMoneda.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -43,7 +68,7 @@ public class InicioInterfaz extends JFrame  implements ActionListener {
         btnConvesorMoneda.setOpaque(true);
         btnConvesorMoneda.setBorder(null);
         btnConvesorMoneda.setBackground(new Color(color.getRed(), color.getGreen(), color.getBlue()));
-        btnConvesorMoneda.setBounds(30,100,150,150);
+        btnConvesorMoneda.setBounds(300,90,150,150);
         btnIngresarImagen[0] = new IngresarImagen();
         btnIngresarImagen[0].crearImagen(btnConvesorMoneda, "/imagenes/Moneda.png");
         contentPane.add(btnConvesorMoneda);
@@ -53,7 +78,7 @@ public class InicioInterfaz extends JFrame  implements ActionListener {
         btnConvesorTiempo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnConvesorTiempo.setBorderPainted(false);
         btnConvesorTiempo.setFocusPainted(false);
-        btnConvesorTiempo.setBounds(200,100,150,150);
+        btnConvesorTiempo.setBounds(300,260,150,150);
         btnConvesorTiempo.setOpaque(true);
         btnConvesorTiempo.setBorder(null);
         btnIngresarImagen[1] = new IngresarImagen();
@@ -65,38 +90,13 @@ public class InicioInterfaz extends JFrame  implements ActionListener {
         btnConvesorTemperatura.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnConvesorTemperatura.setFocusPainted(false);
         btnConvesorTemperatura.setBorderPainted(false);
-        btnConvesorTemperatura.setBounds(370,100,150,150);
+        btnConvesorTemperatura.setBounds(300,430,150,150);
         btnConvesorTemperatura.setOpaque(true);
         btnConvesorTemperatura.setBorder(null);
         btnIngresarImagen[2] = new IngresarImagen();
         btnIngresarImagen[2].crearImagen(btnConvesorTemperatura, "/imagenes/Temperatura.jpg");
         contentPane.add(btnConvesorTemperatura);
         btnConvesorTemperatura.addActionListener(this);
-
-        //Label
-        JLabel lblNewLabel = new JLabel("Elija un conversor");
-        lblNewLabel.setFont(new Font("Garamond", Font.BOLD, 25));
-        lblNewLabel.setBounds(100,30,400,30);
-        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        contentPane.add(lblNewLabel);
-
-        lblConvesorMoneda = new JLabel("Convertirdor de Divisas");
-        lblConvesorMoneda.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        lblConvesorMoneda.setBounds(30,255,150,30);
-        lblConvesorMoneda.setHorizontalAlignment(SwingConstants.CENTER);
-        contentPane.add(lblConvesorMoneda);
-
-        lblConvesorTiempo = new JLabel("Convertir Tiempo");
-        lblConvesorTiempo.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        lblConvesorTiempo.setBounds(200,255,150,30);
-        lblConvesorTiempo.setHorizontalAlignment(SwingConstants.CENTER);
-        contentPane.add(lblConvesorTiempo);
-
-        lblConvesorTemperatura = new JLabel("Convertir Temperatura");
-        lblConvesorTemperatura.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        lblConvesorTemperatura.setBounds(370,255,150,30);
-        lblConvesorTemperatura.setHorizontalAlignment(SwingConstants.CENTER);
-        contentPane.add(lblConvesorTemperatura);
 
     }
 
